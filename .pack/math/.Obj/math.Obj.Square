@@ -1,0 +1,11 @@
+import math
+line = 0
+while True:
+    line += 1
+
+    xSquarefloat = float(input("In[" + str(line) + "]:" + "    " + "Value of the x Variable: "))
+    ySquarefloat = float(input("In[" + str(line) + "]:" + "    " + "Value of the y Variable: "))
+
+    resultofSquareintfloat = xSquarefloat * ySquarefloat
+
+    print("Out[" + str(line) + "]: " + "The size of the Square: " + str(resultofSquareintfloat) + "m2")
