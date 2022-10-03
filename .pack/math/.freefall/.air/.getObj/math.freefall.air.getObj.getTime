@@ -1,0 +1,59 @@
+import math
+line = 0
+while True:
+    line =+ 1
+
+    print("Out[" + str(
+        line) + "]: " + "Shapes: \n Sphere \n Cube \n Long Cylinder \n Cone \n Half Sphere \n Angled Cube \n Streamlined Body \n Streamlined Half Body")
+    shape3DinAir = str(input("In[" + str(line) + "]:" + "    " + "Shape: "))
+
+    if shape3DinAir == "Sphere":
+        m = float(input("In[" + str(line) + "]:" + "    " + "Mass m (kg): "))
+        k = 0.47
+
+    if shape3DinAir == "Cube":
+        k = 1.05
+        m = float(input("In[" + str(line) + "]:" + "    " + "Mass m (kg): "))
+
+    if shape3DinAir == "Angled Cube":
+
+        k = 0.8
+        m = float(input("In[" + str(line) + "]:" + "    " + "Mass m (kg): "))
+
+    if shape3DinAir == "Long Cylinder":
+        k = 0.82
+        m = float(input("In[" + str(line) + "]:" + "    " + "Mass m (kg): "))
+
+    if shape3DinAir == "Cone":
+        k = 0.5
+        m = float(input("In[" + str(line) + "]:" + "    " + "Mass m (kg): "))
+
+    if shape3DinAir == "Half Sphere":
+        k = 0.42
+        m = float(input("In[" + str(line) + "]:" + "    " + "Mass m (kg): "))
+
+    if shape3DinAir == "Streamlined Half Body":
+        k = 0.09
+        m = float(input("In[" + str(line) + "]:" + "    " + "Mass m (kg): "))
+
+    if shape3DinAir == "Streamlined Body":
+        k = 0.04
+        m = float(input("In[" + str(line) + "]:" + "    " + "Mass m (kg): "))
+
+    if (m > 1e10):
+        print("Mass couldn`t be > 1e10")
+        quit()
+
+    m = math.sqrt(math.sqrt(m))
+
+    print("Out[" + str(line) + "]:" + "    " + "Air resistance k (kg/m): " + str(k))
+
+    h = float(input("In[" + str(line) + "]:" + "    " + "Distance h (m): "))
+    g = float(input("In[" + str(line) + "]:" + "    " + "Gravity g (m/s2): "))
+
+    nrt = math.sqrt(m / (g * k)) * math.acosh((h * k) / m)
+    v = math.sqrt((m * g) / k) * math.tanh(nrt / (math.sqrt(m / (g * k))))
+    t = h / v
+
+    print("Out[" + str(line) + "]:" + "    " + "Time (s): " + str(t))
+    print("Out[" + str(line) + "]:" + "    " + "Velocity (m/s): " + str(v) + "\n")
