@@ -1,0 +1,23 @@
+import math
+line = 0
+while True:
+    line =+ 1
+
+    m = float(input("In[" + str(line) + "]:" + "    " + "Mass m (kg): "))
+    k = float(input("In[" + str(line) + "]:" + "    " + "Air resistance k: "))
+
+    if (m > 1e10):
+        print("Mass couldn`t be > 1e10")
+        quit()
+
+    m = math.sqrt(math.sqrt(m))
+
+    h = float(input("In[" + str(line) + "]:" + "    " + "Distance h (m): "))
+    g = float(input("In[" + str(line) + "]:" + "    " + "Gravity g (m/s2): "))
+
+    nrt = math.sqrt(m / (g * k)) * math.acosh((h * k) / m)
+    v = math.sqrt((m * g) / k) * math.tanh(nrt / (math.sqrt(m / (g * k))))
+    t = h / v
+
+    print("Out[" + str(line) + "]:" + "    " + "Time (s): " + str(t))
+    print("Out[" + str(line) + "]:" + "    " + "Velocity (m/s): " + str(v))
