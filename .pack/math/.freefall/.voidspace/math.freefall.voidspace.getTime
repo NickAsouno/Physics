@@ -1,0 +1,10 @@
+import math
+line = 0
+while True:
+    line += 1
+    freefalldisfloat = float(input("In[" + str(line) + "]:" + "    " + "Distance h (m): "))
+    freefallgravfloat = float(input("In[" + str(line) + "]:" + "    " + "Gravity g (m/s2): "))
+
+    freefalltimeres = math.sqrt((freefalldisfloat * 2) / freefallgravfloat)
+
+    print("Out[" + str(line) + "]: " + "Time: " + str(freefalltimeres))
